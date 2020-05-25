@@ -6,23 +6,22 @@ const instance = axios.create({
 				timeout:5000
 			})
 
+//拦截器
+      	//请求
+      	instance.interceptors.request.use(config =>{
+      		return config
+      	},err =>{
+      		console.log(err)
+      	})
+
+        //响应
+      	instance.interceptors.response.use(res =>{
+      		return res.data
+      	},err =>{
+      		console.log(err)
+      	})
+
 
 export function request(config){
-
-//拦截器
-	//请求
-	instance.interceptors.request.use(config =>{
-		return config
-	},err =>{
-		console.log(err)
-	})
-
-  //响应
-	instance.interceptors.response.use(res =>{
-		return res.data
-	},err =>{
-		console.log(err)
-	})
-
 	return instance(config)
 }

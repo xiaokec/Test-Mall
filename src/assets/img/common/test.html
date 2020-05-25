@@ -1,0 +1,27 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body> 
+
+<audio id="myAudio" controls>
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="horse.mp3" type="audio/mpeg">
+     您的浏览器不支持 audio 元素。
+</audio><br>
+<button onclick="getPlaySpeed()" type="button">音频播放速度?</button>
+<button onclick="setPlaySpeed()" type="button">设置音频慢速播放</button>
+<script>
+var x = document.getElementById("myAudio");
+function getPlaySpeed(){ 
+	alert(x.playbackRate);
+} 
+function setPlaySpeed(){ 
+	x.playbackRate = 0.5;
+} 
+</script> 
+
+</body> 
+</html>

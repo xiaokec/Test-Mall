@@ -5,6 +5,10 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+
+//创建原型
+Vue.prototype.$bus = new Vue()
+
 new Vue({
   router,
   store,
