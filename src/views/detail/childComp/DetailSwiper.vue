@@ -1,22 +1,18 @@
 <template>
-  <div>
-    <swiper>
+    <swiper class="detail-swiper">
       <swiper-item v-for="item in banners">
         <div class="item-box">
-          <a :href="item.link">
-            <img :src="item.image" @load="imageLoad">
-          </a>
+           <img :src="item">
         </div>
       </swiper-item>
     </swiper>
-  </div>
 </template>
 
 <script>
   import {Swiper,SwiperItem} from 'components/common/swiper/index.js'
 
   export default{
-    name:'SwiperShow',
+    name:'DetailSwiper',
     props:{
       banners:{
         type:Array,
@@ -28,20 +24,13 @@
     components:{
       Swiper,
       SwiperItem
-    },
-    methods:{
-      imageLoad(){
-        this.$emit('swiperImageLoad')
-      }
     }
   }
 </script>
 
-<style>
-  .item-box{
-    width: 100%;
-  }
-  .item-box img{
-    width:100%
-  }
+<style scoped>
+.detail-swiper{
+  width: 100%;
+  height: 300px;
+}
 </style>

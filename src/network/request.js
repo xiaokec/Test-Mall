@@ -6,7 +6,6 @@ const instance = axios.create({
 				timeout:5000
 			})
 
-//拦截器
       	//请求
       	instance.interceptors.request.use(config =>{
       		return config

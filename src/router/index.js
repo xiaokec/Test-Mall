@@ -5,6 +5,7 @@ const Home = () => import('../views/home/Home.vue')
 const Order = () => import('../views/order/Order.vue')
 const Shop = () => import('../views/shop/Shop.vue')
 const User = () => import('../views/user/User.vue')
+const Detail = () => import('../views/detail/Detail.vue')
 
 Vue.use(VueRouter)
 
@@ -12,6 +13,10 @@ Vue.use(VueRouter)
   {
     path: '',
     name: 'Home',
+    component: Home
+  },
+  {
+    path: '*',
     component: Home
   },
 	{
@@ -33,7 +38,12 @@ Vue.use(VueRouter)
 		path:'/user',
 		name:'User',
 		component:User
-	}
+	},
+  {
+    path:'/detail/:iid',
+    name:'Detail',
+    component:Detail
+  }
 ]
 
 const router = new VueRouter({

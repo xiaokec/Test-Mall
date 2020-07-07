@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <keep-alive>
+    <keep-alive exclude="Detail">
       <router-view></router-view>
     </keep-alive>
     <main-tab-bar/>
@@ -8,23 +8,10 @@
 </template>
 
 <script>
-  import MainTabBar from './components/content/MainTabBar/MainTabBar.vue'
-
 	export default {
-	  name: 'App',
-	  components: {
-      MainTabBar
-	  }
+	  name: 'App'
 	}
 </script>
 
 <style scoped>
-@import url("assets/css/base.css");
-
-#app{
-  max-width: 640px;
-  height: 100%;
-  width: 100%;
-  margin: auto;
-}
 </style>
